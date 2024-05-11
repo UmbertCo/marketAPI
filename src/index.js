@@ -5,7 +5,7 @@ import { sequelize } from "./db/db.js";
 export const main = async () => {
   try {
     await sequelize.sync({force: false}) /*eliminar force para recreate a todo */
-    await sequelize.authenticate();
+    await sequelize.authenticate()
     console.log("Connection has been established successfully.");
     app.listen(3200);
     console.log("Serverlistening on port: ", 3200);

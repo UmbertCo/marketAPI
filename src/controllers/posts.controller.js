@@ -12,5 +12,5 @@ export const createPosts = async (req, res) => {
     title,
     description,
   });
-  res.send("createPosts works");
+  res.send(newPost);
 };

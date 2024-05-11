@@ -1,4 +1,4 @@
-import { DataTypes, INTEGER } from "sequelize";
+import { DataTypes } from "sequelize";
 import { sequelize } from "../db/db.js";
 
 export const PostModel = sequelize.define('posts', {
