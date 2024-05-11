@@ -1,10 +1,10 @@
 import app from "./app.js";
 import { sequelize } from "./db/db.js";
-import './models/post.js';
+
 
 export const main = async () => {
   try {
-    await sequelize.sync()
+    await sequelize.sync({force: false}) /*eliminar force para recreate a todo */
     await sequelize.authenticate();
     console.log("Connection has been established successfully.");
     app.listen(3200);

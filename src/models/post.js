@@ -2,7 +2,7 @@ import { DataTypes, INTEGER } from "sequelize";
 import { sequelize } from "../db/db.js";
 
 export const PostModel = sequelize.define('posts', {
-    postID: {
+    id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
@@ -21,10 +21,5 @@ export const PostModel = sequelize.define('posts', {
     },
     description: {
         type: DataTypes.STRING
-    },
-    creationDate: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
-        allowNull: false
     }
 });
