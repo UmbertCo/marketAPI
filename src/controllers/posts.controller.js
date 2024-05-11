@@ -1,7 +1,8 @@
 import { PostModel } from "../models/post.js";
 
-export const getPosts = (req, res) => {
-  res.send("getPosts works");
+export const getPosts = async (req, res) => {
+  const posts = await PostModel.findAll()
+  res.send(posts);
 };
 
 export const createPosts = async (req, res) => {
