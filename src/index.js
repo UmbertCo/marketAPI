@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3200
 
 export const main = async () => {
   try {
-    await sequelize.sync({force: false}) /*eliminar force para recreate a todo */
+    // await sequelize.sync({force: false}) // no borrar para no tener que buscarlo despues
     await sequelize.authenticate()
     console.log("Connection has been established successfully.");
     app.listen(PORT);
