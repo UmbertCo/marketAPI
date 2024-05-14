@@ -1,11 +1,5 @@
-import Sequelize from "sequelize";
+import Sequelize from 'sequelize';
+import 'dotenv/config'
+const connectionURI = process.env.DB_URI
 
-export const sequelize = new Sequelize(
-    'market',
-    'postgres',
-    'GSMunlock1.',
-    {
-        host: 'localhost',
-        dialect: 'postgres'
-    }
-)
+export const sequelize = new Sequelize(connectionURI)

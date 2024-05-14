@@ -3,6 +3,6 @@ import projectRoutes from "./routes/post.routes.js";
 const app = express();
 
 app.use(express.json());
-app.use(projectRoutes);
+app.use(projectRoutes)
 
 export default app;
