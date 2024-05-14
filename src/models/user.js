@@ -8,6 +8,14 @@ export const UserModel = sequelize.define('users', {
         autoIncrement: true,
         allowNull: false,
     },
+    username: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    pass: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
     imageID: {
         type: DataTypes.INTEGER,
         allowNull: false
