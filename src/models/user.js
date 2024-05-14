@@ -9,7 +9,7 @@ export const UserModel = sequelize.define('users', {
         allowNull: false,
     },
     username: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     },
     pass: {
