@@ -1,9 +1,9 @@
 import { UserModel } from "../models/user.js";
 
-// export const getPosts = async (req, res) => {
-//   const posts = await PostModel.findAll()
-//   res.send(posts);
-// };
+export const getUsers = async (req, res) => {
+  const users = await UserModel.findAll()
+  res.send(users);
+};
 
 export const createUser = async (req, res) => {
   const { username, pass } = req.body;
