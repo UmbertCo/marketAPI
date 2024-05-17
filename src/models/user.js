@@ -12,8 +12,8 @@ export const UserModel = sequelize.define('users', {
         type: DataTypes.STRING,
         allowNull: false
     },
-    pass: {
-        type: DataTypes.INTEGER,
+    password: {
+        type: DataTypes.STRING,
         allowNull: false
     },
     imageID: {
