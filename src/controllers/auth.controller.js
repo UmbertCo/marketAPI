@@ -38,7 +38,6 @@ export const login = async (req, res) => {
 
   try {
     const user = await UserModel.findOne({ where: { username } });
-
     if (!user) {
       return res.status(401).json({ error: 'Credenciales incorrectas' });
     }
@@ -53,6 +52,7 @@ export const login = async (req, res) => {
 
     res.json({ token });
   } catch (error) {
-    res.status(500).json({ error: 'Error en el servidor' });
+    console.log("Error de try: " + error)
+    res.status(500).json({ error: 'Error en e' });
   }
 };
