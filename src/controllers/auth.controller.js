@@ -34,18 +34,19 @@ export const registerUser = [
 ];
 
 export const login = async (req, res) => {
-  const { username, password } = req.body;
+  const { username, pass } = req.body;
 
   try {
     const user = await UserModel.findOne({ where: { username } });
+    console.log(user)
     if (!user) {
       return res.status(401).json({ error: 'Credenciales incorrectas' });
     }
 
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = await bcrypt.compare(pass, user.pass);
 
     if (!isMatch) {
-      return res.status(401).json({ error: 'Credenciales incorrectas' });
+      return res.status(401).json({ error: 'Credenciales incorrectas PPP' });
     }
 
     const token = jwt.sign({ id: user.id, role: user.role }, 'your_jwt_secret', { expiresIn: '1h' });
