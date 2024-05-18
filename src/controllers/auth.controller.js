@@ -6,7 +6,7 @@ import { UserModel } from '../models/user.js';
 export const registerUser = [
   // validaciones express-validator
   body('username').notEmpty().withMessage('El nombre de usuario es requerido'),
-  body('password').isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres'),
+  body('pass').isLength({ min: 6 }).withMessage('La contraseña debe tener al menos 6 caracteres'),
 
   async (req, res) => {
     const errors = validationResult(req);
@@ -14,12 +14,12 @@ export const registerUser = [
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { username, password } = req.body;
+    const { username, pass } = req.body;
     try {
-      const hashedPassword = await bcrypt.hash(password, 10);
+      const hashedPassword = await bcrypt.hash(pass, 10);
       const newUser = await UserModel.create({
         username,
-        password: hashedPassword,
+        pass: hashedPassword,
         imageID: 0,
         role: 'dev',
         status: 'A'

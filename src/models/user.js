@@ -13,11 +13,11 @@ export const UserModel = sequelize.define('users', {
         allowNull: false
     },
     pass: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     },
     imageID: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false
     },
     status: {
